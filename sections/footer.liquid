@@ -15,6 +15,51 @@
 <noscript>{{ 'disclosure.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- style -%}
+    .footer-block__heading {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        margin-top: 20px;
+        line-height: 1.1;
+    }
+    .footer-block__details-content li {
+        line-height: 1.5;
+    }
+    .footer-block__details-content .list-menu__item--link,
+    .footer-block__details-content p {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.8;
+        font-size: 13px;
+        letter-spacing: .2px;
+        color: #00b5e3;
+        text-decoration: none;
+        margin-bottom: 0px;
+        padding-bottom: 0;
+        padding-top: 0 !important;
+    }
+    .footer-block__details-content p {
+        color: #fff !important;
+    }
+    .footer-block__details-content p a {
+        color: #00b5e3;
+        text-decoration: none;
+    }
+    .footer-block__details-content .list-menu__item--link:hover,
+    .footer-block__details-content p a {
+        color: #00c6f7;
+        text-decoration: none;
+
+    }
+    .footer__copyright .copyright__content {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.8;
+        font-size: 13px;
+        color: #fff;
+        letter-spacing: .2px;
+    }
+
   .footer {
     margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
   }
@@ -60,6 +105,22 @@
                 {%- when 'text' -%}
                   <div class="footer-block__details-content rte">
                     {{ block.settings.subtext }}
+
+                    <div style="width: 65px;height:65px;overflow:hidden;">
+                        <a href="https://bikeflights.com/">
+                        <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <rect width="65" height="65" fill="url(#pattern0)"/>
+                          <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                              <use xlink:href="#image0_201_8" transform="scale(0.005)"/>
+                            </pattern>
+                            <image id="image0_201_8" width="200" height="200" xlink:href="data:image/png;base64,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"/>
+                          </defs>
+                        </svg>
+                        </a>
+                    </div>
+
+
                   </div>
                 {%- when 'link_list' -%}
                   {%- if block.settings.menu != blank -%}
@@ -146,6 +207,16 @@
 
         {%- if section.settings.show_social -%}
           <ul class="footer__list-social list-unstyled list-social" role="list">
+
+            {%- if settings.social_facebook_link != blank -%}
+              <li class="list-social__item">
+                <a href="{{ settings.social_facebook_link }}" class="link list-social__link" >
+                  %- render 'icon-facebook' -%}
+                  <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                </a>
+              </li>
+            {%- endif -%}
+
             {%- if settings.social_twitter_link != blank -%}
               <li class="list-social__item">
                 <a href="{{ settings.social_twitter_link }}" class="link list-social__link" >
@@ -154,22 +225,8 @@
                 </a>
               </li>
             {%- endif -%}
-            {%- if settings.social_facebook_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_facebook_link }}" class="link list-social__link" >
-                  {%- render 'icon-facebook' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
-            {%- if settings.social_pinterest_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_pinterest_link }}" class="link list-social__link" >
-                  {%- render 'icon-pinterest' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
+
+
             {%- if settings.social_instagram_link != blank -%}
               <li class="list-social__item">
                 <a href="{{ settings.social_instagram_link }}" class="link list-social__link" >
@@ -178,6 +235,16 @@
                 </a>
               </li>
             {%- endif -%}
+
+            {%- if settings.social_pinterest_link != blank -%}
+              <li class="list-social__item">
+                <a href="{{ settings.social_pinterest_link }}" class="link list-social__link" >
+                  {%- render 'icon-pinterest' -%}
+                  <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+                </a>
+              </li>
+            {%- endif -%}
+
             {%- if settings.social_tiktok_link != blank -%}
               <li class="list-social__item">
                 <a href="{{ settings.social_tiktok_link }}" class="link list-social__link" >
@@ -330,8 +397,11 @@
           </div>
         {%- endif -%}
         <div class="footer__copyright caption">
+          <small class="copyright__content">Copyright 2009-{{ 'now' | date: "%Y" }} | BikeFlights.com</small>
+          {% comment %}
           <small class="copyright__content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
           <small class="copyright__content">{{ powered_by_link }}</small>
+          {% endcomment %}
         </div>
       </div>
     </div>
