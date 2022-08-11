@@ -89,14 +89,134 @@
 
 {%- style -%}
   .header {
-    padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
+        //padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
+        //padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    display:block;
+    width: 100%;
+    padding: 0;
   }
 
   .section-header {
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .container-fluid{
+    display: none !important;
+  }
+  .topNav{
+    width: 100%;
+    max-width: 1170px;
+  }
+
+  .rd-container-fluid{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    display: inline-block;
+  }
+  .container-topNav{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+  }
+  a{
+    text-decoration: none;
+    color: #000;
+  }
+  .navBFBurger{
+    width: 50px;
+    height: 100px;
+    background-color: #fff;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    float: right;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 2px;
+    outline: none
+  }
+  .navBars{
+    width: 35px;
+    height: 2px;
+    background-color: #494949;
+    margin: 8px 0;
+    transition: .4s;
+    border-radius: 5px;
+  }
+
+  .bfLogo2{
+    display: inline-block;
+    float: left;
+    width: 290px;
+    height: 100px;
+    padding: 0;
+    position: relative;
+    background-size: contain;
+    -webkit-transition: background-color .2s ease-in,border-color .2s ease-in,color .2s ease-in,opacity .2s ease-in;
+    transition: background-color .2s ease-in,border-color .2s ease-in,color .2s ease-in,opacity .2s ease-in;
+    background-image: url(https://www.bikeflights.com/images/logos/bf-website-logo-with-tdf.png);
+    border: none;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 3px;
+  }
+  
+  .navBFLinkCol{
+    display:flex;
+    justify-content: space-between;
+  }
+
+  //quick links
+  
+  .navBFQuickLinks{
+    display:block;
+  }
+  .navBFLinkCol ul{
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .navBFLinkCol li{
+    list-style: none;
+    mmargin-left: 0;
+  }
+  
+  .navBFContentSubBtn{
+    border: none;
+    background: 0 0;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px 0 20px;
+    line-height: 1.5;
+    z-index: 1001;
+    font-family: montserrat,sans-serif;
+    font-size: 13px;
+  }
+  .navBFContentSubBtn img{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+  }
+  .navBFContent{
+    left: 220px;
+    top: 0;
+    padding: 0 20px 20px;
+    width: calc(100% - 220px);
+    height: 100%;
+    background: #fff;
+  }
+  .navBFDropDown{
+    display:none;
+  }
+  .bfLogo2{
+    
+  }
   @media screen and (min-width: 750px) {
     .section-header {
       margin-bottom: {{ section.settings.margin_bottom }}px;
@@ -128,6 +248,68 @@
   </symbol>
 </svg>
 <{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+  
+
+
+
+
+  <header class="header header--{{ section.settings.logo_position }} page-width{% if section.settings.menu != blank %} header--has-menu{% endif %}">
+    <div class="rd-container-fluid whiteBackground borderLine">
+      <div class="topNav">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="row container-topNav">
+              <div class="img-logo-container">
+                <a class="bfLogo2" href="#" aria-label="BikeFlights Logo | Official Service of the Tour de France"> </a>
+              </div>
+              <div class="navMainButtons">
+                <button class="navBFBurger">
+                  <div class="navBars"> </div>
+                  <div class="navBars"> </div>
+                  <div class="navBars"> </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class "container-fluid whiteBackground borderBottomGrey">
+      <div class="row">
+        <div class="navBFDropDown openNav">
+          <div class="container">
+            <div class="navBFLinkCol">
+              <div class="navBFButtonSelected navBFQuickLinks">
+                <h3>QuickLinks</h3>
+                <ul>
+                  <li><a>Enlace 1</a></li>
+                  <li><a>Enlace 2</a></li>
+                  <li><a>Enlace 3</a></li>
+                  <li><a>Enlace 4</a></li>
+                </ul>
+              </div>
+              <div class="navBFContent">
+                <button class="navBFContentSubBtn"><a href="#"><img src=""><p>boton 1</p></a></button>
+                <button class="navBFContentSubBtn"><a href="#"><img src=""><p>boton 2</p></a></button>
+                <button class="navBFContentSubBtn"><a href="#"><img src=""><p>boton 3</p></a></button>
+                <button class="navBFContentSubBtn"><a href="#"><img src=""><p>boton 4</p></a></button>
+                <button class="navBFContentSubBtn"><a href="#"><img src=""><p>boton 5</p></a></button>
+                <button class="navBFContentSubBtn"><a href="#"><img src=""><p>boton 6</p></a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  
+  
+  <!-- edit
+  
+
+
+
   <header class="header header--{{ section.settings.logo_position }} page-width{% if section.settings.menu != blank %} header--has-menu{% endif %}">
     {%- if section.settings.menu != blank -%}
       <header-drawer data-breakpoint="tablet">
@@ -604,6 +786,16 @@
       </a>
     </div>
   </header>
+
+
+
+
+
+-->
+
+
+
+
 </{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>
 
 {%- if settings.cart_type == "notification" -%}
