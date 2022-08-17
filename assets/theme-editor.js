@@ -18,3 +18,18 @@ document.addEventListener('shopify:block:deselect', function(event) {
   const parentSlideshowComponent = event.target.closest('slideshow-component');
   if (parentSlideshowComponent.autoplayButtonIsSetToPlay) parentSlideshowComponent.play();
 });
+
+var acc = document.getElementsByClassName("navBFBurger");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var navBFDropDown = this.nextElementSibling;
+          if (navBFDropDown.style.maxHeight) {
+            navBFDropDown.style.maxHeight = null;
+          } else {
+            navBFDropDown.style.maxHeight = navBFDropDown.scrollHeight + "px";
+          }
+        });
+      }
