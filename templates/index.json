@@ -31,7 +31,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "boxes",
+        "collection": "featured-products",
         "products_to_show": 10,
         "columns_desktop": 2,
         "full_width": false,
