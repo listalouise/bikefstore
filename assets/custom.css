@@ -1,0 +1,76 @@
+.rich-text__blocks {
+    max-width: 100%;
+}
+.rich-text__blocks h2.rich-text__heading {
+    font-family: montserrat,sans-serif;
+    color: #494949;
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+.collection__title h2.title {
+    font-family: montserrat,sans-serif;
+    color: #494949;
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-align: center;
+}
+/* Grid product */
+.product-grid .grid__item .card__inner {
+    max-height: 180px;
+}
+.product-grid .grid__item .card__media {
+    width: 100%;
+    margin: 44px auto;
+}
+.product-grid .grid__item .card__media img {
+    object-fit: contain;
+}
+.product-grid .grid__item .card__content {
+    text-align: center;
+}
+.product-grid .grid__item .card__content .card__heading {
+    font-family: montserrat,sans-serif;
+    color: #494949;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 21px;
+    margin-bottom: 35px;
+}
+.product-grid .grid__item .card__content .card__heading a {
+    text-decoration: none !important;
+}
+.product-grid .grid__item .card__content .price {
+    font-family: montserrat,sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+    color: #494949;
+    margin: 10px auto 2px;
+    letter-spacing: .2px;
+    text-align: center;
+}
+.product-grid .grid__item .card__content .quick-add .quick-add__submit {
+    display: inline-block;
+    min-width: 150px;
+    width: auto;
+    min-height: 38px;
+    border: 1px solid transparent;
+    border-color: #00b5e3;
+    background-color: #fff;
+    color: #00b5e3;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: .2s;
+    font-size: 14px;
+    border-width: 2px;
+    padding: 7px 12px;
+    text-transform: uppercase;
+}
+.product-grid .grid__item .card__content .quick-add .quick-add__submit::before,
+.product-grid .grid__item .card__content .quick-add .quick-add__submit::after{
+    content: none;
+}
