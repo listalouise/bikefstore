@@ -74,3 +74,44 @@
 .product-grid .grid__item .card__content .quick-add .quick-add__submit::after{
     content: none;
 }
+/* Collections */
+.collection-hero__title {
+    font-family: montserrat,sans-serif;
+    color: #494949;
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+#main-collection-filters .facets__form .facet-filters__label {
+    font-family: montserrat,sans-serif;
+    font-size: 14px;
+    line-height: 30px;
+    display: inline-block;
+    color: #494949;
+    letter-spacing: .2px;
+}
+#main-collection-filters .facets__form select.facet-filters__sort {
+    font-family: montserrat,sans-serif;
+    font-size: 14px;
+    border: 1px solid #ececec;
+    height: 30px;
+    padding: 0 10px;
+    color: gray;
+    text-transform: capitalize;
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+}
+.facet-filters__sort:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
+}
+#main-collection-filters .facets__form .icon-caret {
+    display: none;
+}
+#main-collection-filters .product-count {
+    display: none;
+}
