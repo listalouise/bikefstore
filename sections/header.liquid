@@ -117,6 +117,7 @@
   .topNav{
     width: 100%;
     max-width: 1170px;
+    margin: auto;
   }
 
   .rd-container-fluid{
@@ -247,9 +248,6 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-  }
-  .topNav{
-    margin-left:250px;
   }
   .navBFContentSubBtn{
     border: none;
@@ -895,8 +893,128 @@
 
 
 -->
+<style>
+.header {
+    border-bottom: 1px solid #efefef;
+}
+.menu-collection .container {
+    display: flex;
+    /*align-items: baseline;*/
+    justify-content: space-between;
+}
+.menu-collection h5 {
+    display: none;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    border: none;
+    padding: 10px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 0px;
+    color: #494949;
+    padding-top: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+.menu-collection h5 svg {
+    fill: #494949;
+    width: 17px;
+    margin-bottom: -3px;
+}
+.menu-collection ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.menu-collection ul li a {
+    font-family: "Montserrat", sans-serif;
+    color: #494949;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    outline: none;
+    box-shadow: none;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    border-bottom: 3px solid transparent;
+}
+.menu-collection ul li a:hover {
+    border-bottom: 3px solid #00b5e3;
+}
+.menu-collection .cart-row .header__icon--cart {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    padding: 15px 0px;
+    color: #494949;
+    line-height: 1.5;
+    letter-spacing: .2px;
+    text-decoration: none;
+    width: auto;
+    margin-right: auto;
+}
+.menu-collection .cart-row .header__icon--cart svg {
+    width: 26px;
+}
+.menu-collection .cart-row .header__icon--cart:hover {
+    color: #00b5e3;
+}
+.menu-collection ul.open {
+	display: grid !important;
+}
+@media screen and (max-width: 991px) {
+    .menu-collection ul {
+        display: none;
+        padding-left: 20px;
+    }
+    .menu-collection h5 {
+        display: block;
+    }
+}
+@media screen and (max-width: 767px) {
+    .menu-collection .cart-row .header__icon--cart {
+        font-size: 0;
+    }
+}
+</style>
 
 
+<!-- Menu Collection -->
+<div class="menu-collection topNav header-wrapper--border-top">
+    <div class="container">
+        <div class="menu-collection--items">
+            <h5>Categories
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 55.751 55.751" style="enable-background:new 0 0 55.751 55.751;" xml:space="preserve">
+                <g>
+                    <path d="M31.836,43.006c0.282-0.281,0.518-0.59,0.725-0.912L54.17,20.485c2.107-2.109,2.109-5.528,0-7.638   c-2.109-2.107-5.527-2.109-7.638,0l-18.608,18.61L9.217,12.753c-2.109-2.108-5.527-2.109-7.637,0   C0.527,13.809-0.002,15.19,0,16.571c-0.002,1.382,0.527,2.764,1.582,3.816l21.703,21.706c0.207,0.323,0.445,0.631,0.729,0.913   c1.078,1.078,2.496,1.597,3.91,1.572C29.336,44.604,30.758,44.084,31.836,43.006z"/>
+                </g>
+            </svg>
+            </h5>
+            <ul>
+                <li><a href="/">Featured</a></li>
+                <li><a href="/collections/boxes">Bicycle Boxes</a></li>
+                <li><a href="/collections/cases">Bicycle Cases</a></li>
+                <li><a href="/collections/bags">Wheel Bags</a></li>
+                <li><a href="/collections/swag">Swag</a></li>
+                <li><a href="/collections/events">Event Shipping</a></li>
+            </ul>
+        </div>
+        <div class="cart-row">
+            <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+                Cart
+                    {%- liquid
+                      if cart == empty
+                        render 'icon-cart-empty'
+                      else
+                        render 'icon-cart'
+                      endif
+                    -%}
+            </a>
+        </div>
+    </div>
+</div>
 
 
 </{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>
@@ -1187,3 +1305,9 @@
 }
 {% endschema %}
 
+<script>
+const btnOpenCategory = document.querySelector(".menu-collection h5");
+btnOpenCategory.addEventListener("click", function () {
+    document.querySelector(".menu-collection ul").classList.toggle('open');
+});
+</script>

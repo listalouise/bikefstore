@@ -1,5 +1,5 @@
 .rich-text__blocks {
-    max-width: 100%;
+    max-width: 100% !important;
 }
 .rich-text__blocks h2.rich-text__heading {
     font-family: montserrat,sans-serif;
