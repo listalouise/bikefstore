@@ -20,7 +20,7 @@
 }
 /* Grid product */
 .product-grid .grid__item .card__inner {
-    max-height: 180px;
+    max-height: 238px;
 }
 .product-grid .grid__item .card__media {
     width: 100%;
@@ -114,4 +114,19 @@
 }
 #main-collection-filters .product-count {
     display: none;
+}
+.collection-hero__inner .collection-hero__description {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px !important;
+    color: #000000;
+    font-family: "proxima-nova";
+}
+.collection-hero__title {
+    margin-top: 40px !important;
+}
+.collection-hero__inner .collection-hero__description a {
+    color: #00b5e3;
+    text-decoration: none;
 }
